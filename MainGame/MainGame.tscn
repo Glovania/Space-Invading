@@ -14,10 +14,10 @@ extents = Vector2( 20.9622, 380.576 )
 extents = Vector2( 662.058, 10 )
 
 [node name="SpaceInvaders" type="Control"]
-margin_left = -0.768188
-margin_top = 1.23187
-margin_right = 1279.23
-margin_bottom = 721.232
+margin_left = 1.58711
+margin_top = 2.12566
+margin_right = 1281.59
+margin_bottom = 722.126
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -25,8 +25,10 @@ __meta__ = {
 countdownMax = 50
 
 [node name="HUD" type="HBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 17.0
+margin_top = 1.0
+margin_right = 119.0
+margin_bottom = 41.0
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -72,7 +74,7 @@ position = Vector2( -5.37704, -0.768158 )
 shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 642.94, 669.056 )
+position = Vector2( 648.382, 663.615 )
 
 [node name="Border_Top" type="KinematicBody2D" parent="." groups=[
 "top",

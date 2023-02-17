@@ -64,6 +64,7 @@ margin_bottom = 203.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
+action_mode = 0
 text = "Start Game"
 
 [node name="Options" type="Button" parent="Layout/Main/Buttons"]
