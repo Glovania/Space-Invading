@@ -16,14 +16,20 @@ func _ready():
 		print(currentTimer)
 	print("Game Over")
 	
+	GlobalVariables.BulletInstanceCount -= 1
+	
+	get_tree().change_scene("res://Menu/Menu.tscn")
 	
 	var name = "Autobot 1"
 	var welcome = "Allios"
 	var message = welcome + " " + name
 	
 	print(message)
-
-
+	
+	
+func StartGameButton_pressed():
+	$StartButton.hide()
+	emit_signal("start_game")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
