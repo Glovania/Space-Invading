@@ -14,46 +14,50 @@ extents = Vector2( 20.9622, 380.576 )
 extents = Vector2( 662.058, 10 )
 
 [node name="SpaceInvaders" type="Control"]
-margin_left = 1.58711
-margin_top = 2.12566
-margin_right = 1281.59
-margin_bottom = 722.126
+margin_left = 2.78457
+margin_top = 0.329449
+margin_right = 1282.79
+margin_bottom = 720.33
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-countdownMax = 100
+countdownMax = 50
 
 [node name="HUD" type="HBoxContainer" parent="."]
-margin_left = 17.0
-margin_top = 1.0
-margin_right = 119.0
-margin_bottom = 41.0
+margin_left = 26.4929
+margin_top = 10.4111
+margin_right = 144.493
+margin_bottom = 58.4111
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Countdown" type="Label" parent="HUD"]
-margin_top = 13.0
-margin_bottom = 27.0
+margin_top = 17.0
+margin_right = 16.0
+margin_bottom = 31.0
+text = "50"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CurrentScoreLabel" type="Label" parent="HUD"]
-margin_left = 4.0
-margin_top = 13.0
-margin_right = 90.0
-margin_bottom = 27.0
-text = "Current Score"
+margin_left = 20.0
+margin_right = 106.0
+margin_bottom = 48.0
+text = "
+
+Current Score"
 
 [node name="CurrentScore" type="Label" parent="HUD"]
-margin_left = 94.0
-margin_top = 13.0
-margin_right = 102.0
-margin_bottom = 27.0
-text = "0"
+margin_left = 110.0
+margin_right = 118.0
+margin_bottom = 48.0
+text = "
+
+0"
 
 [node name="Border_Left" type="Area2D" parent="." groups=[
 "left",
