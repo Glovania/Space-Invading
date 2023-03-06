@@ -16,7 +16,7 @@ func _ready():
 		print(currentTimer)
 	print("Game Over")
 	
-	GlobalVariables.BulletInstanceCount -= 1
+	GlobalVariables.BulletInstanceCount = 0
 	
 	get_tree().change_scene("res://Menu/Menu.tscn")
 	
@@ -26,14 +26,9 @@ func _ready():
 	
 	print(message)
 	
-	
+func _process(delta):
+		$HUD/CurrentScore.text = str(GlobalVariables.ScroingInformation["currentScore"])
+
 func StartGameButton_pressed():
 	$StartButton.hide()
 	emit_signal("start_game")
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-
-

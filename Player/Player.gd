@@ -12,12 +12,12 @@ func _ready():
 func _process(delta):
 	if GlobalVariables.AutoFiring:
 		if Input.is_action_pressed("fire"):
-			if GlobalVariables.BulletInstanceCount > 3:
+			if GlobalVariables.BulletInstanceCount > 6:
 				var bulletInstance = bulletSource.instance()
 				bulletInstance.position = Vector2(position.x, position.y-20)
 				get_tree().get_root().add_child(bulletInstance)
 				# Automatic Firing code
-				yield(get_tree().create_timer(0.7).print("Timed Out"))
+				yield(get_tree().create_timer(0.7),"timeout")
 	elif Input.is_action_just_pressed("fire"):
 		if GlobalVariables.BulletInstanceCount < 3:
 			var bulletInstance = bulletSource.instance()

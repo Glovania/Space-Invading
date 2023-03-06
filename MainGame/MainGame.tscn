@@ -45,19 +45,17 @@ __meta__ = {
 
 [node name="CurrentScoreLabel" type="Label" parent="HUD"]
 margin_left = 20.0
+margin_top = 17.0
 margin_right = 106.0
-margin_bottom = 48.0
-text = "
-
-Current Score"
+margin_bottom = 31.0
+text = "Current Score"
 
 [node name="CurrentScore" type="Label" parent="HUD"]
 margin_left = 110.0
+margin_top = 17.0
 margin_right = 118.0
-margin_bottom = 48.0
-text = "
-
-0"
+margin_bottom = 31.0
+text = "0"
 
 [node name="Border_Left" type="Area2D" parent="." groups=[
 "left",
