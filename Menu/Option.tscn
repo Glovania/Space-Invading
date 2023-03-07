@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Menu/AutoFiring.gd" type="Script" id=1]
+[ext_resource path="res://Menu/Return.gd" type="Script" id=2]
 
 [node name="Option" type="Control"]
 anchor_right = 1.0
@@ -22,7 +23,7 @@ __meta__ = {
 margin_right = 146.0
 margin_bottom = 40.0
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="Automatic" type="Label" parent="VBoxContainer/HBoxContainer"]
 margin_top = 13.0
 margin_right = 66.0
 margin_bottom = 27.0
@@ -42,6 +43,7 @@ script = ExtResource( 1 )
 margin_top = 44.0
 margin_right = 146.0
 margin_bottom = 64.0
+script = ExtResource( 2 )
 
 [node name="Return to menu" type="Label" parent="VBoxContainer/Return"]
 margin_right = 146.0
@@ -53,3 +55,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/AutoFiring" to="VBoxContainer/HBoxContainer/AutoFiring" method="_on_AutoFiring_pressed"]
+[connection signal="pressed" from="VBoxContainer/Return" to="VBoxContainer/Return" method="_on_Return_pressed"]
