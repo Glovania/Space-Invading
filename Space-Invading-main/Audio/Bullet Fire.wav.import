@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bullet Fire.wav-3e6e96d3348ba32e98f8e431d229c1f1.sample"
+
+[deps]
+
+source_file="res://Audio/Bullet Fire.wav"
+dest_files=[ "res://.import/Bullet Fire.wav-3e6e96d3348ba32e98f8e431d229c1f1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

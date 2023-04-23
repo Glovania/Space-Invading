@@ -1,0 +1,182 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Audio/Background Music.wav" type="AudioStream" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://MainGame/MainGame.gd" type="Script" id=4]
+[ext_resource path="res://Enemy/Enemies.gd" type="Script" id=5]
+[ext_resource path="res://ExampleCode.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20.9622, 379.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 662.058, 10 )
+
+[node name="SpaceInvaders" type="Control"]
+margin_left = 2.78457
+margin_top = 0.329449
+margin_right = 1282.79
+margin_bottom = 720.33
+script = ExtResource( 4 )
+countdownMax = 20
+
+[node name="HUD" type="HBoxContainer" parent="."]
+margin_left = 26.4929
+margin_top = 10.4111
+margin_right = 144.493
+margin_bottom = 58.4111
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Countdown" type="Label" parent="HUD"]
+margin_top = 17.0
+margin_right = 16.0
+margin_bottom = 31.0
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentScoreLabel" type="Label" parent="HUD"]
+margin_left = 20.0
+margin_top = 17.0
+margin_right = 106.0
+margin_bottom = 31.0
+text = "Current Score"
+
+[node name="CurrentScore" type="Label" parent="HUD"]
+margin_left = 110.0
+margin_top = 17.0
+margin_right = 118.0
+margin_bottom = 31.0
+text = "0"
+
+[node name="Border_Left" type="Area2D" parent="." groups=["left"]]
+position = Vector2( 0.21543, 346.671 )
+scale = Vector2( 0.68, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border_Left"]
+position = Vector2( -27.9412, 13.9996 )
+shape = SubResource( 1 )
+
+[node name="Border_Right" type="Area2D" parent="." groups=["right"]]
+position = Vector2( 1280.22, 346.671 )
+scale = Vector2( 0.719998, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border_Right"]
+position = Vector2( 0, 14 )
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 638.28, 654.876 )
+
+[node name="Border_Top" type="KinematicBody2D" parent="." groups=["top"]]
+position = Vector2( 638.381, -12.1214 )
+
+[node name="TopCollider" type="CollisionShape2D" parent="Border_Top" groups=["top"]]
+position = Vector2( 0, 1 )
+shape = SubResource( 2 )
+
+[node name="Border_Bottom" type="KinematicBody2D" parent="." groups=["bottom"]]
+position = Vector2( 636.022, 730.107 )
+scale = Vector2( 0.996784, 1.1964 )
+
+[node name="TopCollider" type="CollisionShape2D" parent="Border_Bottom" groups=["bottom"]]
+position = Vector2( 0, 1 )
+shape = SubResource( 2 )
+
+[node name="Enemies" type="Node2D" parent="."]
+position = Vector2( 636.731, -13.8468 )
+scale = Vector2( 1.0657, 1.04912 )
+script = ExtResource( 5 )
+
+[node name="Enemy" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 314.554, 114.383 )
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 207.582, 115.336 )
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 103.425, 116.289 )
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -1.67001, 117.243 )
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -104.889, 118.196 )
+
+[node name="Enemy6" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -218.43, 119.149 )
+
+[node name="Enemy7" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -327.279, 120.102 )
+
+[node name="Enemy8" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 314.554, 186.381 )
+
+[node name="Enemy9" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 207.582, 187.334 )
+
+[node name="Enemy10" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 103.425, 188.287 )
+
+[node name="Enemy11" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -1.6701, 189.24 )
+
+[node name="Enemy12" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -104.889, 190.193 )
+
+[node name="Enemy13" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -218.43, 191.147 )
+
+[node name="Enemy14" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -327.279, 192.1 )
+
+[node name="Enemy15" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 314.554, 257.944 )
+
+[node name="Enemy16" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 207.582, 258.897 )
+
+[node name="Enemy17" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 103.425, 259.85 )
+
+[node name="Enemy18" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -1.6701, 260.803 )
+
+[node name="Enemy19" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -104.889, 261.757 )
+
+[node name="Enemy20" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -218.43, 262.71 )
+
+[node name="Enemy21" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -327.279, 263.663 )
+
+[node name="Enemy28" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 314.768, 329.168 )
+
+[node name="Enemy27" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 207.796, 330.122 )
+
+[node name="Enemy26" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 103.639, 331.074 )
+
+[node name="Enemy25" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -1.45639, 332.028 )
+
+[node name="Enemy24" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -104.675, 332.981 )
+
+[node name="Enemy23" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -218.216, 333.934 )
+
+[node name="Enemy22" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( -327.065, 334.887 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
