@@ -1,16 +1,38 @@
 extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export(int) var countdownMax
+var currentTimer
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	set_process(true)
+	currentTimer = countdownMax
+	$HUD/Countdown.text = str(currentTimer)
+	
+	for childNode in $HUD.get_children():
+		if childNode is Button:
+			childNode.connect("pressed", self, "_on_Button_pressed", [childNode.scene_to_load])
+	
+	while currentTimer > 0:
+		yield(get_tree().create_timer(1.0), "timeout")
+		$HUD/Countdown.text = str(currentTimer)
+		currentTimer = currentTimer - 1
+		print(currentTimer)
+	print("Game Over")
+	get_tree().change_scene("res://MainGame/LoseScene.tscn")
+	
+	var name = "Autobot 1"
+	var welcome = "Yo"
+	var message = welcome + " " + name
+	print(message)
+	
+	
+func _process(delta):
+		$HUD/CurrentScore.text = str(GlobalVariables.ScoringInformation["currentScore"])
+		if get_tree().get_nodes_in_group("enemy").size() == 0:
+			get_tree().change_scene("res://MainGame/WinScene.tscn")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func StartGameButton_pressed():
+	$StartButton.hide()
+	emit_signal("start_game")
