@@ -36,15 +36,21 @@ gantt
     tickInterval 1week
 
     section Holidays
-    School's Holidays: 09-04-2023, 22-04-2023
+    School's Holidays: 09-04-2023, 23-04-2023
+    ANZAC Day: 25-04-2023, 1d
 
     section Design
     Project Overview: 05-04-2023, 1d
-    Project Plan: 05-04-2023, 24-04-2023
+    Project Plan: 05-04-2023, 1d
 
     section Implementation
-    UI: 10-04-2023
-    Multiple Enemies: 15-04-2023
+    BetterMainMenu: 25-04-2023, 30-04-2023
+    Multiple Enemies: 25-04-2023, 30-04-2023
+    PlayerHeath: 01-05-2023, 03-05-2023
+    Levels: 01-05-2023, 07-05-2023
+    Shop: 08-05-2023, 29-05-2023
+    Weapons: 03-05-2023, 10-05-2023
+
 
     Testing: 31-05-2023
     Final Submission: 07-06-2023, 1d
