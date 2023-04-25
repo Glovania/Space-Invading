@@ -44,7 +44,7 @@ gantt
     Project Plan: 05-04-2023, 1d
 
     section Implementation
-    BetterMainMenu: 25-04-2023, 30-04-2023
+    BetterMainMenu: 25-04-2023, 1d
     Multiple Enemies: 25-04-2023, 30-04-2023
     PlayerHeath: 01-05-2023, 03-05-2023
     Levels: 01-05-2023, 07-05-2023
