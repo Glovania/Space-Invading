@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Audio/Background Music.wav" type="AudioStream" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://MainGame/MainGame.gd" type="Script" id=4]
 [ext_resource path="res://Enemy/Enemies.gd" type="Script" id=5]
 [ext_resource path="res://ExampleCode.gd" type="Script" id=6]
+[ext_resource path="res://MainGame/Background Image.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20.9622, 379.5 )
@@ -20,6 +21,14 @@ margin_right = 1282.79
 margin_bottom = 720.33
 script = ExtResource( 4 )
 countdownMax = 20
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = 1419.22
+margin_top = -1690.33
+margin_right = 5259.22
+margin_bottom = 109.671
+rect_rotation = 89.9999
+texture = ExtResource( 7 )
 
 [node name="HUD" type="HBoxContainer" parent="."]
 margin_left = 26.4929
