@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Audio/Background Music.wav" type="AudioStream" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -8,11 +8,14 @@
 [ext_resource path="res://ExampleCode.gd" type="Script" id=6]
 [ext_resource path="res://MainGame/Background Image.png" type="Texture" id=7]
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 11.7647, 376 )
+
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20.9622, 379.5 )
+extents = Vector2( 11.1111, 370 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 662.058, 10 )
+extents = Vector2( 657.059, 6.68674 )
 
 [node name="SpaceInvaders" type="Control"]
 margin_left = 2.78457
@@ -22,7 +25,13 @@ margin_bottom = 720.33
 script = ExtResource( 4 )
 countdownMax = 20
 
+[node name="BetterVisualize" type="MarginContainer" parent="."]
+margin_left = -3.0
+margin_right = 1277.0
+margin_bottom = 720.0
+
 [node name="Background" type="TextureRect" parent="."]
+visible = false
 margin_left = 1419.22
 margin_top = -1690.33
 margin_right = 5259.22
@@ -36,9 +45,6 @@ margin_top = 10.4111
 margin_right = 144.493
 margin_bottom = 58.4111
 script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Countdown" type="Label" parent="HUD"]
 margin_top = 17.0
@@ -63,42 +69,44 @@ margin_right = 118.0
 margin_bottom = 31.0
 text = "0"
 
-[node name="Border_Left" type="Area2D" parent="." groups=["left"]]
-position = Vector2( 0.21543, 346.671 )
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 637.215, 639.671 )
+
+[node name="Border_Left" type="Area2D" parent="."]
+position = Vector2( -2.78457, 359.671 )
 scale = Vector2( 0.68, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Border_Left"]
-position = Vector2( -27.9412, 13.9996 )
-shape = SubResource( 1 )
+[node name="LeftBorderLimitation" type="CollisionShape2D" parent="Border_Left" groups=["left"]]
+position = Vector2( 7.01231e-07, 0 )
+shape = SubResource( 3 )
 
-[node name="Border_Right" type="Area2D" parent="." groups=["right"]]
-position = Vector2( 1280.22, 346.671 )
+[node name="Border_Right" type="Area2D" parent="."]
+position = Vector2( 1277.22, 359.671 )
 scale = Vector2( 0.719998, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Border_Right"]
-position = Vector2( 0, 14 )
+[node name="RightBorderLimitation" type="CollisionShape2D" parent="Border_Right" groups=["right"]]
+position = Vector2( -0.000244141, 0 )
 shape = SubResource( 1 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 638.28, 654.876 )
-
-[node name="Border_Top" type="KinematicBody2D" parent="." groups=["top"]]
-position = Vector2( 638.381, -12.1214 )
-
-[node name="TopCollider" type="CollisionShape2D" parent="Border_Top" groups=["top"]]
-position = Vector2( 0, 1 )
-shape = SubResource( 2 )
-
-[node name="Border_Bottom" type="KinematicBody2D" parent="." groups=["bottom"]]
-position = Vector2( 636.022, 730.107 )
+[node name="Border_Bottom" type="Area2D" parent="."]
+position = Vector2( 637.215, 719.671 )
 scale = Vector2( 0.996784, 1.1964 )
 
-[node name="TopCollider" type="CollisionShape2D" parent="Border_Bottom" groups=["bottom"]]
-position = Vector2( 0, 1 )
+[node name="BottomBorderLimitation" type="CollisionShape2D" parent="Border_Bottom" groups=["top"]]
+scale = Vector2( 0.999998, 0.999999 )
+shape = SubResource( 2 )
+
+[node name="Border_Top" type="Area2D" parent="."]
+position = Vector2( 637.215, -0.32945 )
+scale = Vector2( 1, 1 )
+
+[node name="TopBorderLimitation" type="CollisionShape2D" parent="Border_Top" groups=["bottom"]]
+position = Vector2( 0, 7.7486e-07 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 2 )
 
 [node name="Enemies" type="Node2D" parent="."]
-position = Vector2( 636.731, -13.8468 )
+position = Vector2( 637.215, -0.329449 )
 scale = Vector2( 1.0657, 1.04912 )
 script = ExtResource( 5 )
 
