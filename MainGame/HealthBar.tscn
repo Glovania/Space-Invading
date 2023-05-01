@@ -1,21 +1,40 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://MainGame/HealthBar Under.png" type="Texture" id=1]
-[ext_resource path="res://MainGame/HealthBar Over.png" type="Texture" id=2]
+[sub_resource type="Theme" id=1]
+ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
+ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+ProgressBar/fonts/font = null
+ProgressBar/styles/bg = null
+ProgressBar/styles/fg = null
 
-[node name="HealthBar" type="Control"]
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.431373, 0.203922, 0.203922, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HealthBar" type="TextureProgress" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="HP Bar" type="ProgressBar" parent="."]
+margin_left = 1120.0
+margin_right = 1283.0
+margin_bottom = 24.0
+theme = SubResource( 1 )
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+custom_colors/font_color = Color( 0.733333, 0.168627, 0.811765, 1 )
 value = 50.0
-texture_under = ExtResource( 1 )
-texture_over = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
