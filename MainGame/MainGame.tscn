@@ -8,13 +8,13 @@
 [ext_resource path="res://ExampleCode.gd" type="Script" id=6]
 [ext_resource path="res://MainGame/Background Image.png" type="Texture" id=7]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.7647, 376 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 11.1111, 370 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 657.059, 6.68674 )
 
 [node name="SpaceInvaders" type="Control"]
@@ -23,6 +23,9 @@ margin_top = 0.329449
 margin_right = 1282.79
 margin_bottom = 720.33
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 countdownMax = 20
 
 [node name="BetterVisualize" type="MarginContainer" parent="."]
@@ -68,42 +71,50 @@ margin_right = 118.0
 margin_bottom = 31.0
 text = "0"
 
-[node name="Border_Left" type="Area2D" parent="." groups=["left"]]
+[node name="Border_Left" type="Area2D" parent="." groups=[
+"left",
+]]
 position = Vector2( -2.78457, 359.671 )
 scale = Vector2( 0.68, 1 )
 
 [node name="LeftBorderLimitation" type="CollisionShape2D" parent="Border_Left"]
 position = Vector2( 7.01231e-07, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
-[node name="Border_Right" type="Area2D" parent="." groups=["right"]]
+[node name="Border_Right" type="Area2D" parent="." groups=[
+"right",
+]]
 position = Vector2( 1277.22, 359.671 )
 scale = Vector2( 0.719998, 1 )
 
 [node name="RightBorderLimitation" type="CollisionShape2D" parent="Border_Right"]
 position = Vector2( -0.000244141, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 637.215, 639.671 )
 
-[node name="Border_Top" type="KinematicBody2D" parent="." groups=["top"]]
+[node name="Border_Top" type="KinematicBody2D" parent="." groups=[
+"top",
+]]
 position = Vector2( 637.215, 639.671 )
 
 [node name="TopBorderLimitation" type="CollisionShape2D" parent="Border_Top"]
 position = Vector2( 0, -640 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
-[node name="Border_Bottom" type="KinematicBody2D" parent="." groups=["bottom"]]
+[node name="Border_Bottom" type="KinematicBody2D" parent="." groups=[
+"bottom",
+]]
 position = Vector2( 637.215, 639.671 )
 
 [node name="BottomBorderLimitation" type="CollisionShape2D" parent="Border_Bottom"]
 position = Vector2( 0, 80 )
 scale = Vector2( 0.996782, 1.1964 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Enemies" type="Node2D" parent="."]
-position = Vector2( 637.216, -40.3294 )
+position = Vector2( 637.151, -17.8424 )
 scale = Vector2( 1.0657, 1.04912 )
 script = ExtResource( 5 )
 

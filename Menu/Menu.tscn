@@ -11,42 +11,21 @@
 size = 80
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0, 0, 0.490196 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0.686275 )
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0, 0, 0, 0.686275 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0, 0, 0, 0.392157 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0, 0, 0, 0.490196 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0, 0, 0, 0.686275 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0, 0, 0, 0.392157 )
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -68,6 +47,27 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0, 0, 0.392157 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0, 0, 0.490196 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 0.686275 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0, 0, 0, 0.392157 )
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -139,23 +139,23 @@ margin_bottom = 201.0
 focus_neighbour_top = NodePath("../Quit")
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 custom_fonts/font = ExtResource( 3 )
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/normal = SubResource( 2 )
 action_mode = 0
 text = "Start Game"
 
 [node name="Options" type="Button" parent="MarginContainer/Layout/Main/ButtonHolder"]
 margin_top = 211.0
 margin_right = 926.0
-margin_bottom = 413.0
+margin_bottom = 412.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
 custom_fonts/font = ExtResource( 3 )
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/normal = SubResource( 10 )
 action_mode = 0
 text = "Options"
 __meta__ = {
@@ -163,16 +163,16 @@ __meta__ = {
 }
 
 [node name="Quit" type="Button" parent="MarginContainer/Layout/Main/ButtonHolder"]
-margin_top = 423.0
+margin_top = 422.0
 margin_right = 926.0
 margin_bottom = 625.0
 focus_neighbour_bottom = NodePath("../StartGame")
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
 custom_fonts/font = ExtResource( 3 )
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
 action_mode = 0
 text = "Quit"
 
@@ -185,7 +185,6 @@ margin_bottom = 764.0
 margin_right = 179.0
 margin_bottom = 14.0
 text = "Copyright Ryan Cather 2022."
-
 [connection signal="pressed" from="MarginContainer/Layout/Main/ButtonHolder/StartGame" to="." method="_on_Start_Game_Button_pressed"]
 [connection signal="pressed" from="MarginContainer/Layout/Main/ButtonHolder/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="MarginContainer/Layout/Main/ButtonHolder/Quit" to="." method="_on_Quit_pressed"]
