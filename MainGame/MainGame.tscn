@@ -91,11 +91,11 @@ shape = SubResource( 2 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 637.215, 639.671 )
 
-[node name="Control" parent="Player" instance=ExtResource( 8 )]
-margin_left = -1202.0
-margin_top = 44.9995
-margin_right = -1202.0
-margin_bottom = 44.9995
+[node name="HP_Bar" parent="Player" instance=ExtResource( 8 )]
+margin_left = -672.0
+margin_top = -608.0
+margin_right = -672.0
+margin_bottom = -608.0
 
 [node name="Border_Top" type="KinematicBody2D" parent="." groups=["top"]]
 position = Vector2( 637.215, 639.671 )
