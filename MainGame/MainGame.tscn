@@ -72,9 +72,7 @@ margin_right = 118.0
 margin_bottom = 31.0
 text = "0"
 
-[node name="Border_Left" type="Area2D" parent="." groups=[
-"left",
-]]
+[node name="Border_Left" type="Area2D" parent="." groups=["left"]]
 position = Vector2( -2.78457, 359.671 )
 scale = Vector2( 0.68, 1 )
 
@@ -82,9 +80,7 @@ scale = Vector2( 0.68, 1 )
 position = Vector2( 7.01231e-07, 0 )
 shape = SubResource( 1 )
 
-[node name="Border_Right" type="Area2D" parent="." groups=[
-"right",
-]]
+[node name="Border_Right" type="Area2D" parent="." groups=["right"]]
 position = Vector2( 1277.22, 359.671 )
 scale = Vector2( 0.719998, 1 )
 
@@ -96,23 +92,19 @@ shape = SubResource( 2 )
 position = Vector2( 637.215, 639.671 )
 
 [node name="Control" parent="Player" instance=ExtResource( 8 )]
-margin_left = -1200.0
-margin_top = 39.9995
-margin_right = -1200.0
-margin_bottom = 39.9995
+margin_left = -1202.0
+margin_top = 44.9995
+margin_right = -1202.0
+margin_bottom = 44.9995
 
-[node name="Border_Top" type="KinematicBody2D" parent="." groups=[
-"top",
-]]
+[node name="Border_Top" type="KinematicBody2D" parent="." groups=["top"]]
 position = Vector2( 637.215, 639.671 )
 
 [node name="TopBorderLimitation" type="CollisionShape2D" parent="Border_Top"]
 position = Vector2( 0, -640 )
 shape = SubResource( 3 )
 
-[node name="Border_Bottom" type="KinematicBody2D" parent="." groups=[
-"bottom",
-]]
+[node name="Border_Bottom" type="KinematicBody2D" parent="." groups=["bottom"]]
 position = Vector2( 637.215, 639.671 )
 
 [node name="BottomBorderLimitation" type="CollisionShape2D" parent="Border_Bottom"]
