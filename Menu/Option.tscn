@@ -6,51 +6,109 @@
 [node name="Option" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 568.444
-margin_top = 305.309
-margin_right = 714.444
-margin_bottom = 369.309
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.247302, 0.168091, 0.28125, 0.862745 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 146.0
-margin_bottom = 40.0
-
-[node name="Automatic" type="Label" parent="VBoxContainer/HBoxContainer"]
-margin_top = 13.0
-margin_right = 66.0
-margin_bottom = 27.0
-text = "Automatic"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AutoFiring" type="CheckButton" parent="VBoxContainer/HBoxContainer"]
-margin_left = 70.0
-margin_right = 146.0
-margin_bottom = 40.0
-align = 1
-script = ExtResource( 1 )
-
-[node name="Return" type="Button" parent="VBoxContainer"]
-margin_top = 44.0
-margin_right = 146.0
-margin_bottom = 64.0
+[node name="Return" type="Button" parent="."]
+margin_left = 1024.0
+margin_top = 640.0
+margin_right = 1280.0
+margin_bottom = 720.0
+text = "Return to menu"
+icon_align = 1
 script = ExtResource( 2 )
 
-[node name="Return to menu" type="Label" parent="VBoxContainer/Return"]
-margin_right = 146.0
-margin_bottom = 19.0
-text = "Return to menu"
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 128.0
+margin_top = 96.0
+margin_right = 776.0
+margin_bottom = 279.0
+rect_scale = Vector2( 0.789991, 2.79747 )
+alignment = 1
+
+[node name="FirstTextContainer" type="Button" parent="VBoxContainer"]
+margin_right = 648.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon_align = 1
+
+[node name="LaserMode" type="Label" parent="VBoxContainer/FirstTextContainer"]
+margin_top = 6.0
+margin_right = 648.0
+margin_bottom = 57.0
+text = "Laser Mode"
 align = 1
 valign = 1
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/AutoFiring" to="VBoxContainer/HBoxContainer/AutoFiring" method="_on_AutoFiring_pressed"]
-[connection signal="pressed" from="VBoxContainer/Return" to="VBoxContainer/Return" method="_on_Return_pressed"]
+[node name="LaserActive" type="CheckButton" parent="VBoxContainer/FirstTextContainer"]
+margin_left = 648.109
+margin_top = 5.71946
+margin_right = 726.109
+margin_bottom = 45.7195
+rect_scale = Vector2( 4.1656, 1.13407 )
+align = 1
+icon_align = 1
+script = ExtResource( 1 )
+
+[node name="SecondTextContainer" type="Button" parent="VBoxContainer"]
+margin_top = 62.0
+margin_right = 648.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon_align = 1
+
+[node name="GasBombMode" type="Label" parent="VBoxContainer/SecondTextContainer"]
+margin_top = 18.0
+margin_right = 648.0
+margin_bottom = 58.0
+text = "Gas Bomb Mode
+"
+align = 1
+valign = 1
+
+[node name="GasBombActive" type="CheckButton" parent="VBoxContainer/SecondTextContainer"]
+margin_left = 648.0
+margin_top = 7.0
+margin_right = 726.0
+margin_bottom = 47.0
+rect_scale = Vector2( 4.1656, 1.13407 )
+align = 1
+icon_align = 1
+script = ExtResource( 1 )
+
+[node name="ThirdTextContainer" type="Button" parent="VBoxContainer"]
+margin_top = 124.0
+margin_right = 648.0
+margin_bottom = 183.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon_align = 1
+
+[node name="GasBombMode2" type="Label" parent="VBoxContainer/ThirdTextContainer"]
+margin_top = 16.0
+margin_right = 658.0
+margin_bottom = 59.0
+text = "Burst Mode
+"
+align = 1
+valign = 1
+
+[node name="BurstActivation" type="CheckButton" parent="VBoxContainer/ThirdTextContainer"]
+margin_left = 648.109
+margin_top = 7.54765
+margin_right = 726.109
+margin_bottom = 47.5476
+rect_scale = Vector2( 4.1656, 1.13407 )
+align = 1
+icon_align = 1
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="Return" to="Return" method="_on_Return_pressed"]
+[connection signal="pressed" from="VBoxContainer/FirstTextContainer/LaserActive" to="VBoxContainer/FirstTextContainer/LaserActive" method="_on_AutoFiring_pressed"]
+[connection signal="pressed" from="VBoxContainer/SecondTextContainer/GasBombActive" to="VBoxContainer/SecondTextContainer/GasBombActive" method="_on_AutoFiring_pressed"]
+[connection signal="pressed" from="VBoxContainer/ThirdTextContainer/BurstActivation" to="VBoxContainer/ThirdTextContainer/BurstActivation" method="_on_AutoFiring_pressed"]

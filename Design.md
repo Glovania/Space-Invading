@@ -13,7 +13,7 @@ For the updated gameplay, first of all, I'm adding new player weapons
 
 ## Player Weapons
 
-Player will get a new weapon after every 2 levels. The new weapons will be Laser, Gas bombs and Vines. However, for each weapon, they will be restricted as can be shooted only 3 shots/ click. With Laser weapon type, they will be infinite with a delay of 5 seconds.
+Player will get a new weapon after every 2 levels. The new weapons will be Laser, Gas bombs. However, for each weapon, they will be restricted as can be shooted only 3 shots/ click. With Laser weapon type, they will be infinite with a delay of 5 seconds.
 
 ## Multiple Enemy Types
         

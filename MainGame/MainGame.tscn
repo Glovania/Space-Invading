@@ -24,9 +24,6 @@ margin_top = 0.329449
 margin_right = 1282.79
 margin_bottom = 720.33
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 countdownMax = 20
 
 [node name="BetterVisualize" type="MarginContainer" parent="."]
