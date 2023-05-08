@@ -27,11 +27,13 @@ script = ExtResource( 4 )
 countdownMax = 20
 
 [node name="BetterVisualize" type="MarginContainer" parent="."]
+visible = false
 margin_left = -3.0
 margin_right = 1277.0
 margin_bottom = 720.0
 
 [node name="Background" type="TextureRect" parent="."]
+visible = false
 margin_left = 1419.22
 margin_top = -1690.33
 margin_right = 5259.22

@@ -7,6 +7,7 @@ var bulletSource = preload("res://Bullet/Bullet.tscn")
 onready var health = $HP_Bar/HP_Percentage
 
 func _ready():
+	
 	set_process(true)
 	set_physics_process(true)
 
@@ -22,7 +23,7 @@ func _process(delta):
 			bulletInstance.position = Vector2(position.x, position.y-88)
 			get_tree().get_root().add_child(bulletInstance)
 			
-#	$HP_Bar/HP_Percentage.value = health
+# 	$HP_Bar/HP_Percentage.value = health
 
 	
 func _physics_process(delta):
