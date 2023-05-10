@@ -10,13 +10,13 @@
 [ext_resource path="res://MainGame/HealthBar.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11.7647, 376 )
+extents = Vector2( 11.7647, 416 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 11.1111, 370 )
+extents = Vector2( 11.1111, 416 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 657.059, 6.68674 )
+extents = Vector2( 706.273, 6.6867 )
 
 [node name="SpaceInvaders" type="Control"]
 margin_left = 2.78457
@@ -71,21 +71,36 @@ margin_right = 118.0
 margin_bottom = 31.0
 text = "0"
 
-[node name="Border_Left" type="Area2D" parent="." groups=["left"]]
-position = Vector2( -2.78457, 359.671 )
-scale = Vector2( 0.68, 1 )
+[node name="LeftArea" type="Area2D" parent="." groups=["left"]]
+position = Vector2( -2.78457, -0.329449 )
 
-[node name="LeftBorderLimitation" type="CollisionShape2D" parent="Border_Left"]
-position = Vector2( 7.01231e-07, 0 )
+[node name="LeftBorder" type="CollisionShape2D" parent="LeftArea"]
+position = Vector2( -8, 352 )
+scale = Vector2( 0.68, 1 )
 shape = SubResource( 1 )
 
-[node name="Border_Right" type="Area2D" parent="." groups=["right"]]
-position = Vector2( 1277.22, 359.671 )
-scale = Vector2( 0.719998, 1 )
+[node name="RightArea" type="Area2D" parent="." groups=["right"]]
+position = Vector2( -2.78457, -0.329449 )
 
-[node name="RightBorderLimitation" type="CollisionShape2D" parent="Border_Right"]
-position = Vector2( -0.000244141, 0 )
+[node name="RightBorder" type="CollisionShape2D" parent="RightArea"]
+position = Vector2( 1285.22, 351.671 )
+scale = Vector2( 0.719998, 1 )
 shape = SubResource( 2 )
+
+[node name="TopArea" type="StaticBody2D" parent="."]
+position = Vector2( -2.78457, -0.329453 )
+
+[node name="TopBorder" type="CollisionShape2D" parent="TopArea"]
+position = Vector2( 640, -8.32831 )
+shape = SubResource( 3 )
+
+[node name="Bottom" type="StaticBody2D" parent="."]
+position = Vector2( -2.78457, 719.671 )
+
+[node name="BottomBorder" type="CollisionShape2D" parent="Bottom"]
+position = Vector2( 640, 8.00006 )
+scale = Vector2( 0.996782, 1.1964 )
+shape = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 637.215, 639.671 )
@@ -96,23 +111,8 @@ margin_top = -608.0
 margin_right = -672.0
 margin_bottom = -608.0
 
-[node name="Border_Top" type="KinematicBody2D" parent="." groups=["top"]]
-position = Vector2( 637.215, 639.671 )
-
-[node name="TopBorderLimitation" type="CollisionShape2D" parent="Border_Top"]
-position = Vector2( 0, -640 )
-shape = SubResource( 3 )
-
-[node name="Border_Bottom" type="KinematicBody2D" parent="." groups=["bottom"]]
-position = Vector2( 637.215, 639.671 )
-
-[node name="BottomBorderLimitation" type="CollisionShape2D" parent="Border_Bottom"]
-position = Vector2( 0, 80 )
-scale = Vector2( 0.996782, 1.1964 )
-shape = SubResource( 3 )
-
 [node name="Enemies" type="Node2D" parent="."]
-position = Vector2( 637.151, -17.8424 )
+position = Vector2( 637.216, -8.32945 )
 scale = Vector2( 1.0657, 1.04912 )
 script = ExtResource( 5 )
 
@@ -201,5 +201,6 @@ position = Vector2( 210.19, 312.643 )
 position = Vector2( 330.299, 312.643 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -2.78457, -0.329453 )
 stream = ExtResource( 1 )
 autoplay = true
