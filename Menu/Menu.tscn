@@ -84,10 +84,10 @@ script = ExtResource( 7 )
 MainGameScene = ExtResource( 8 )
 
 [node name="Background" type="TextureRect" parent="."]
-margin_left = -626.622
-margin_top = 5.10938
-margin_right = 1933.38
-margin_bottom = 1445.11
+margin_left = -669.669
+margin_top = -702.051
+margin_right = 1890.33
+margin_bottom = 737.95
 rect_rotation = 0.0190807
 texture = ExtResource( 4 )
 

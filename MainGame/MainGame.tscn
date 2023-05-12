@@ -31,10 +31,10 @@ margin_right = 1277.0
 margin_bottom = 720.0
 
 [node name="Background" type="TextureRect" parent="."]
-margin_left = 1211.22
-margin_top = -1610.33
-margin_right = 5051.22
-margin_bottom = 189.672
+margin_left = 1554.22
+margin_top = -1600.33
+margin_right = 5394.22
+margin_bottom = 199.672
 rect_rotation = 89.9999
 texture = ExtResource( 7 )
 

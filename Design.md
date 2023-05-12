@@ -45,10 +45,10 @@ gantt
 
     section Implementation
     BetterMainMenu: 25-04-2023, 1d
+    BetterOption: 01-06-2023, 1d
     Multiple Enemies: 25-04-2023, 30-04-2023
     PlayerHeath: 01-05-2023, 03-05-2023
     Levels: 01-05-2023, 07-05-2023
-    Shop: 08-05-2023, 29-05-2023
     Weapons: 03-05-2023, 10-05-2023
 
 
