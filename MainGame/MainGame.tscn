@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Audio/Background Music.wav" type="AudioStream" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Enemy/Enemies.gd" type="Script" id=5]
 [ext_resource path="res://ExampleCode.gd" type="Script" id=6]
 [ext_resource path="res://MainGame/Background Image.png" type="Texture" id=7]
-[ext_resource path="res://MainGame/HealthBar.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.7647, 416 )
@@ -32,10 +31,10 @@ margin_right = 1277.0
 margin_bottom = 720.0
 
 [node name="Background" type="TextureRect" parent="."]
-margin_left = 1419.22
-margin_top = -1690.33
-margin_right = 5259.22
-margin_bottom = 109.671
+margin_left = 1211.22
+margin_top = -1610.33
+margin_right = 5051.22
+margin_bottom = 189.672
 rect_rotation = 89.9999
 texture = ExtResource( 7 )
 
@@ -102,12 +101,6 @@ shape = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 637.215, 639.671 )
-
-[node name="HP_Bar" parent="Player" instance=ExtResource( 8 )]
-margin_left = -672.0
-margin_top = -608.0
-margin_right = -672.0
-margin_bottom = -608.0
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2( 637.216, -8.32945 )

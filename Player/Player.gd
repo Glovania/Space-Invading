@@ -4,8 +4,6 @@ extends KinematicBody2D
 var movement_speed = 250
 var bulletSource = preload("res://Bullet/Bullet.tscn")
 
-onready var health = $HP_Bar/HP_Percentage
-
 func _ready():
 	
 	set_process(true)
