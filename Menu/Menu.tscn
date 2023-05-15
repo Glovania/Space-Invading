@@ -5,7 +5,7 @@
 [ext_resource path="res://Menu/buttonFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Menu/Background Image.jpg" type="Texture" id=4]
 [ext_resource path="res://Menu/MainMenu.gd" type="Script" id=7]
-[ext_resource path="res://MainGame/MainGame.tscn" type="PackedScene" id=8]
+[ext_resource path="res://NewLevels/Level_1.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80

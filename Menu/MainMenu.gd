@@ -21,7 +21,7 @@ func loadData():
 
 
 func _on_Start_Game_Button_pressed():
-	get_tree().change_scene("res://MainGame/MainGame.tscn")
+	get_tree().change_scene("res://NewLevels/Level_1.tscn")
 	
 func _on_Options_pressed():
 	get_tree().change_scene("res://Menu/Option.tscn")
