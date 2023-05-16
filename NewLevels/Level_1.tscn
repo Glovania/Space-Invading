@@ -68,33 +68,33 @@ margin_right = 118.0
 margin_bottom = 31.0
 text = "0"
 
-[node name="LeftArea" type="Area2D" parent="." groups=["left"]]
+[node name="LeftLimit" type="Area2D" parent="." groups=["left"]]
 position = Vector2( -2.78457, -0.329449 )
 
-[node name="LeftBorder" type="CollisionShape2D" parent="LeftArea"]
+[node name="LeftBorder" type="CollisionShape2D" parent="LeftLimit"]
 position = Vector2( -8, 352 )
 scale = Vector2( 0.68, 1 )
 shape = SubResource( 1 )
 
-[node name="RightArea" type="Area2D" parent="." groups=["right"]]
+[node name="RightLimit" type="Area2D" parent="." groups=["right"]]
 position = Vector2( -2.78457, -0.329449 )
 
-[node name="RightBorder" type="CollisionShape2D" parent="RightArea"]
+[node name="RightBorder" type="CollisionShape2D" parent="RightLimit"]
 position = Vector2( 1285.22, 351.671 )
 scale = Vector2( 0.719998, 1 )
 shape = SubResource( 2 )
 
-[node name="TopArea" type="StaticBody2D" parent="."]
+[node name="TopLimit" type="StaticBody2D" parent="."]
 position = Vector2( -2.78457, -0.329453 )
 
-[node name="TopBorder" type="CollisionShape2D" parent="TopArea"]
+[node name="TopBorder" type="CollisionShape2D" parent="TopLimit"]
 position = Vector2( 640, -8.32831 )
 shape = SubResource( 3 )
 
-[node name="BottomArea" type="StaticBody2D" parent="."]
+[node name="BottomLimit" type="StaticBody2D" parent="."]
 position = Vector2( -2.78457, 719.671 )
 
-[node name="BottomBorder" type="CollisionShape2D" parent="BottomArea"]
+[node name="BottomBorder" type="CollisionShape2D" parent="BottomLimit"]
 position = Vector2( 640, 8.00006 )
 scale = Vector2( 0.996782, 1.1964 )
 shape = SubResource( 3 )
