@@ -21,5 +21,5 @@ func _physics_process(delta):
 			
 		if "Player" in collidedObject.collider.name:
 			collidedObject.get_collider().queue_free()
-			queue_free()
 			get_tree().change_scene("res://Menu/Menu.tscn")
+			queue_free()
