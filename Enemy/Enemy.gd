@@ -13,10 +13,10 @@ func _colliding(area):
 	
 	if area.is_in_group("right"):
 		get_parent().global_position.y += 10
-		get_parent().speed = -150
+		get_parent().speed = -170
 	if area.is_in_group("left"):
 		get_parent().global_position.y += 10
-		get_parent().speed = 150
+		get_parent().speed = 170
 
 
 func _process(delta):
