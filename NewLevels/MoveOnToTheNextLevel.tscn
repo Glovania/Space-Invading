@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://NewLevels/MoveOnToTheNextLevel.gd" type="Script" id=1]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ExitButton" type="Button" parent="."]
+margin_left = 104.0
+margin_top = 320.0
+margin_right = 488.0
+margin_bottom = 448.0
+
+[node name="BackToMenu" type="Label" parent="ExitButton"]
+margin_right = 252.0
+margin_bottom = 67.0
+rect_scale = Vector2( 1.52179, 1.90652 )
+text = "
+Back to Menu
+"
+align = 1
+valign = 1
+
+[node name="NextLevelButton" type="Button" parent="."]
+margin_left = 728.0
+margin_top = 320.0
+margin_right = 1112.0
+margin_bottom = 448.0
+
+[node name="Level2" type="Label" parent="NextLevelButton"]
+margin_right = 261.0
+margin_bottom = 82.0
+rect_scale = Vector2( 1.46917, 1.57957 )
+text = "
+
+Level 2
+
+"
+align = 1
+valign = 1
+
+[node name="Congrats" type="RichTextLabel" parent="."]
+margin_left = 320.0
+margin_top = 168.0
+margin_right = 719.0
+margin_bottom = 184.0
+rect_scale = Vector2( 1.52243, 4.11062 )
+text = "Quite impressive for passing 1st level huh. Time to move on !"
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="NextLevelButton" to="." method="_on_NextLevelButton_pressed"]

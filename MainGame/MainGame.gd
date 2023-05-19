@@ -31,8 +31,9 @@ func _ready():
 func _process(delta):
 		$HUD/CurrentScore.text = str(GlobalVariables.ScoringInformation["currentScore"])
 		if get_tree().get_nodes_in_group("enemy").size() == 0:
-			get_tree().change_scene("res://NewLevels/Level_" + str(int(get_tree().current_scene.name) + 1) + ".tscn")
+			get_tree().change_scene("res://NewLevels/MoveOnToTheNextLevel.tscn")
 
 func StartGameButton_pressed():
 	$StartButton.hide()
 	emit_signal("start_game")
+
