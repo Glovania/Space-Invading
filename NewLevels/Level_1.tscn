@@ -38,35 +38,54 @@ margin_bottom = 200.0
 rect_rotation = 89.9999
 texture = ExtResource( 7 )
 
-[node name="HUD" type="HBoxContainer" parent="."]
-margin_left = 26.4929
-margin_top = 10.4111
-margin_right = 144.493
-margin_bottom = 58.4111
+[node name="Score_HUD" type="HBoxContainer" parent="."]
+margin_left = -3.0
+margin_right = 125.0
+margin_bottom = 40.0
 script = ExtResource( 6 )
 
-[node name="Countdown" type="Label" parent="HUD"]
-margin_top = 17.0
-margin_right = 16.0
-margin_bottom = 31.0
-text = "10"
+[node name="Score" type="Label" parent="Score_HUD"]
+margin_top = 13.0
+margin_right = 90.0
+margin_bottom = 27.0
+text = "Current score:"
+align = 1
+valign = 1
+
+[node name="ScoreCounter" type="Label" parent="Score_HUD"]
+margin_left = 94.0
+margin_top = 13.0
+margin_right = 102.0
+margin_bottom = 27.0
+text = "0"
+align = 1
+valign = 1
+
+[node name="Timer_HUD" type="HBoxContainer" parent="."]
+margin_left = 1149.0
+margin_right = 1277.0
+margin_bottom = 40.0
+script = ExtResource( 6 )
+
+[node name="Timer" type="Label" parent="Timer_HUD"]
+margin_top = 13.0
+margin_right = 90.0
+margin_bottom = 27.0
+text = "Current timer:"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CurrentScoreLabel" type="Label" parent="HUD"]
-margin_left = 20.0
-margin_top = 17.0
-margin_right = 106.0
-margin_bottom = 31.0
-text = "Current Score"
-
-[node name="CurrentScore" type="Label" parent="HUD"]
-margin_left = 110.0
-margin_top = 17.0
-margin_right = 118.0
-margin_bottom = 31.0
+[node name="TimerCounter" type="Label" parent="Timer_HUD"]
+margin_left = 94.0
+margin_top = 13.0
+margin_right = 102.0
+margin_bottom = 27.0
 text = "0"
+align = 1
+valign = 1
 
 [node name="LeftLimit" type="Area2D" parent="." groups=["left"]]
 position = Vector2( -2.78457, -0.329449 )

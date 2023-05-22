@@ -8,15 +8,15 @@ var currentTimer
 func _ready():
 	set_process(true)
 	currentTimer = countdownMax
-	$HUD/Countdown.text = str(currentTimer)
+	$Timer_HUD/TimerCounter.text = str(currentTimer)
 	
-	for childNode in $HUD.get_children():
-		if childNode is Button:
-			childNode.connect("pressed", self, "_on_Button_pressed", [childNode.scene_to_load])
+#	for childNode in $HUD.get_children():
+#		if childNode is Button:
+#			childNode.connect("pressed", self, "_on_Button_pressed", [childNode.scene_to_load])
 	
 	while currentTimer > 0:
 		yield(get_tree().create_timer(1.0), "timeout")
-		$HUD/Countdown.text = str(currentTimer)
+		$Timer_HUD/TimerCounter.text = str(currentTimer)
 		currentTimer = currentTimer - 1
 		print(currentTimer)
 	print("Game Over")
@@ -29,7 +29,7 @@ func _ready():
 	
 	
 func _process(delta):
-		$HUD/CurrentScore.text = str(GlobalVariables.ScoringInformation["currentScore"])
+		$Score_HUD/ScoreCounter.text = str(GlobalVariables.ScoringInformation["currentScore"])
 		if get_tree().get_nodes_in_group("enemy").size() == 0:
 			get_tree().change_scene("res://NewLevels/MoveOnToTheNextLevel.tscn")
 
