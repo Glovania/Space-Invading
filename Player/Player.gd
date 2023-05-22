@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 
 var movement_speed = 350
+var heath = 5
 var bulletSource = preload("res://Bullet/Bullet.tscn")
 
 func _ready():
