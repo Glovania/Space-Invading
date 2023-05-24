@@ -30,7 +30,7 @@ The higher the level is, the more complicated enemy are. For instance, in level 
 
 ```mermaid
 gantt
-    title Glovania Invaders Plan
+    title Glovania's Space Invaders Plan
     dateFormat DD-MM-YYYY
     axisFormat %d-%B
     tickInterval 1week
@@ -38,6 +38,8 @@ gantt
     section Holidays
     School's Holidays: 09-04-2023, 23-04-2023
     ANZAC Day: 25-04-2023, 1d
+    Reconciliation Day: 29-05-2023, 1d
+    King's Birthday: 05-06-2023, 1d
 
     section Design
     Project Overview: 05-04-2023, 1d
@@ -45,10 +47,10 @@ gantt
 
     section Implementation
     BetterMainMenu: 25-04-2023, 1d
-    BetterOption: 01-06-2023, 1d
-    Multiple Enemies: 25-04-2023, 30-04-2023
+    BetterOption: 01-05-2023, 1d
+    Multiple Enemies: 17-05-2023, 24-05-2023
     PlayerHeath: 01-05-2023, 03-05-2023
-    Levels: 01-05-2023, 07-05-2023
+    Levels: 10-05-2023, 12-05-2023
     Weapons: 03-05-2023, 10-05-2023
 
 
