@@ -28,11 +28,10 @@ extents = Vector2( 24, 16 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
-max_heath = 3
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="PlayerArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
 position = Vector2( 0, 16 )
 shape = SubResource( 3 )
 
@@ -50,3 +49,12 @@ anims/DamageTakenSpaceship = SubResource( 1 )
 [node name="HitArea" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 16 )
 shape = SubResource( 2 )
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = -32.0
+margin_top = 32.0
+margin_right = 608.0
+margin_bottom = 112.0
+rect_scale = Vector2( 0.1, 0.1 )
+percent_visible = false
