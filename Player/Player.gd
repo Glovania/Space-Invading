@@ -1,8 +1,10 @@
 extends KinematicBody2D
 
 
-var movement_speed = 350
-var heath = 5
+export (int) var movement_speed: int = 350
+export (int) var max_heath
+
+
 var bulletSource = preload("res://Bullet/Bullet.tscn")
 
 func _ready():
