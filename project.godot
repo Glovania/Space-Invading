@@ -20,6 +20,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
+PauseMenu="*res://UI/PauseMenu.tscn"
 GlobalVariables="*res://Global.gd"
 
 [display]
@@ -47,6 +48,10 @@ ui_control={
  ]
 }
 Module={
+"deadzone": 0.5,
+"events": [  ]
+}
+cancel={
 "deadzone": 0.5,
 "events": [  ]
 }
