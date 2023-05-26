@@ -1,29 +1,50 @@
 # Project Overview
 
-This game is a Upgraded version of "Space Invaders". The game's theme is The Outsiders vs The Belongings.
+- This game is a Upgraded version of "Space Invaders". The game's theme is The Outsiders vs The Belongings.
 
 
-The Outsiders are alliens that invading our planet. The Belongings are human that trying their best to protect their planet. 
+- The Outsiders are alliens that invading our planet. The Belongings are human that trying their best to protect their planet. 
 
 
 # New Gameplay
 
-For the updated gameplay, first of all, I'm adding new player weapons
+- In this new gameplay for "Space Invader, we will have a total of 2 levels. In Level 1, there will be an enemy called "Space" for you to defeat. Similar in level 2, however, there will be a new enemy called "Arrow". The only way to win this game is to defeat all the enemies on both level within the limited time.
 
+## New Level
 
-## Player Weapons
-
-Player will get a new weapon after every 2 levels. The new weapons will be Laser, Gas bombs. However, for each weapon, they will be restricted as can be shooted only 3 shots/ click. With Laser weapon type, they will be infinite with a delay of 5 seconds.
-
+- We will have 2 levels in this game.
 ## Multiple Enemy Types
         
-The higher the level is, the more complicated enemy are. For instance, in level 2, instead of having only "Gunner" enemies where they can only shoot and shuffle down, there will be a new enemy called "Tracker". "Tracker" will shoot out arrow that track player movement (Not too accurate). For player to deflect it, they can either dodge it or shoot down the arrow.
+- On level 2, we will have a new type of enemy called "Arrow" enemies.
 
- ![Arrow Enemies](https://www.pngkit.com/png/detail/28-284284_starfoxx-spaceship-pixel-art-spaceship-png.png)
+    ![Arrow Enemies](https://www.pngkit.com/png/detail/28-284284_starfoxx-spaceship-pixel-art-spaceship-png.png)
+
+## Player's Health
+
+- Player will have at least 3 health.
+
+    ![Health](https://i.pinimg.com/originals/1b/5a/22/1b5a22085086f5fbb7025bfd0d03c19f.png)
 
  
 # Behaviour - User Journey
 
+```mermaid
+journey
+title User Journey
+    section Start Game
+        Click Option button to choose "burst" mode: 5: User
+        CLick Start button: 5: User
+
+    section Change Scene inbetween 2 levels
+        Click 'Level 2' button to move on: 7: User
+        CLick 'Return to menu' button: 4: User
+
+    section Winner Scene
+        Click 'Return to menu' button: 7: User
+
+    section Loser Scene
+        Click 'Return to menu' button: 4: User
+```
 
 
 # Planning Diagram - Project Plan
@@ -39,7 +60,6 @@ gantt
     School's Holidays: 09-04-2023, 23-04-2023
     ANZAC Day: 25-04-2023, 1d
     Reconciliation Day: 29-05-2023, 1d
-    King's Birthday: 05-06-2023, 1d
 
     section Design
     Project Overview: 05-04-2023, 1d
