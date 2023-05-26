@@ -71,7 +71,7 @@ gantt
     Multiple Enemies: 17-05-2023, 24-05-2023
     PlayerHeath: 01-05-2023, 03-05-2023
     Levels: 10-05-2023, 12-05-2023
-    PauseMenu: 01-06-2023, 1d
+    PauseMenu: 26-05-2023, 1d
 
 
     Testing: 31-05-2023
