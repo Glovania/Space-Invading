@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var health = 10
+var health = 5
 var movement_speed = 350
 var bulletSource = preload("res://Bullet/Bullet.tscn")
 
@@ -42,7 +42,12 @@ func playerMovement(delta):
 			if position.y > 600:
 				move_and_collide(Vector2(0, -movement_speed * delta))
 
-func update_heath():
-	var health_bar = $HealthBar
-	health_bar.value = health 
-	health_bar.visible = false
+#func update_heath():
+#	var health_bar = $HealthBar
+#	health_bar.value = health 
+#	health_bar.visible = false
+
+func reduceHealth():
+	health -= 1
+	if health == 0:
+		get_tree().change_scene("res://Menu/Menu.tscn")
