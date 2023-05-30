@@ -58,9 +58,10 @@ gantt
     tickInterval 1week
 
     section Holidays
-    School's Holidays: 09-04-2023, 23-04-2023
+    School's Holidays: 09-04-2023, 14d
     ANZAC Day: 25-04-2023, 1d
     Reconciliation Day: 29-05-2023, 1d
+    King's Birthday: 07-06-2023, 1d
 
     section Design
     Project Overview: 05-04-2023, 1d
@@ -69,12 +70,14 @@ gantt
     section Implementation
     BetterMainMenu: 25-04-2023, 1d
     BetterOption: 01-05-2023, 1d
-    Multiple Enemies: 17-05-2023, 24-05-2023
-    PlayerHeath: 01-05-2023, 03-05-2023
-    Levels: 10-05-2023, 12-05-2023
+    BetterInbetweenSceneChange: 01-06-2023, 2d
+    Multiple Enemies: 17-05-2023, 7d
+    PlayerHealth: 31-05-2023, 1d
+    EnemyHealth: 31-05-2023, 1d
+    Levels: 10-05-2023, 2d
     PauseMenu: 26-05-2023, 1d
 
-
-    Testing: 31-05-2023
-    Final Submission: 07-06-2023, 1d
+    section Final
+    Testing: 07-06-2023, 7d
+    Final Submission: 14-06-2023, 1d
 ```
