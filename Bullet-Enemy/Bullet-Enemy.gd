@@ -21,6 +21,5 @@ func _physics_process(delta):
 				
 			if "Player" in collidedObject.collider.name:
 				collidedObject.collider.reduceHealth()
-				get_tree().change_scene("res://MainGame/LoseScene.tscn")
 			else:
 				print("Enemy Bullet: ", GlobalVariables.enemyBulletInstanceCount)
