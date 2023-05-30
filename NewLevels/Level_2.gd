@@ -1,6 +1,5 @@
 extends Control
 
-
 export(int) var countdownMax
 var currentTimer
 

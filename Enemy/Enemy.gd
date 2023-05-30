@@ -1,22 +1,11 @@
 extends KinematicBody2D
 
-
+var health = 2
 var bullet = preload("res://Bullet-Enemy/Bullet-Enemy.tscn")
 
 
 func _ready():
-	
 	$Area2D.connect("area_entered", self, "_colliding")
-	
-
-func _colliding(area):
-	
-	if area.is_in_group("right"):
-		get_parent().global_position.y += 10
-		get_parent().speed = -170
-	if area.is_in_group("left"):
-		get_parent().global_position.y += 10
-		get_parent().speed = 170
 
 
 func _process(delta):
@@ -31,3 +20,19 @@ func _process(delta):
 		
 		bulletInstance.position = Vector2(global_position.x, global_position.y+20)
 		get_tree().get_root().add_child(bulletInstance)
+
+
+func _colliding(area):
+	if area.is_in_group("right"):
+		get_parent().global_position.y += 10
+		get_parent().speed = -170
+	if area.is_in_group("left"):
+		get_parent().global_position.y += 10
+		get_parent().speed = 170
+
+
+func reduceEnemyHealth():
+	health -= 1
+#	print("Health: ", health) #Check the current Enemy's Health
+	if health == 0:
+		queue_free()

@@ -21,10 +21,11 @@
 
 ## Player's Health
 
-- Player will have at least 3 health.
+- Player will have at least 5 health.
 
-    ![Health](https://i.pinimg.com/originals/1b/5a/22/1b5a22085086f5fbb7025bfd0d03c19f.png)
+## Shooting Mode
 
+- Player can switch between Burst mode (3 bullets at once) and Tap mode (1 bullet at once)
  
 # Behaviour - User Journey
 

@@ -14,7 +14,7 @@ extents = Vector2( 8, 416 )
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 704, 8 )
 
-[node name="Control" type="Control"]
+[node name="Level_2" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
@@ -23,123 +23,6 @@ countdownMax = 20
 [node name="BetterVisualize" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-
-[node name="LeftLimit" type="Area2D" parent="." groups=["left"]]
-
-[node name="RightBorder" type="CollisionShape2D" parent="LeftLimit"]
-position = Vector2( -8, 352 )
-shape = SubResource( 3 )
-
-[node name="RightLimit" type="Area2D" parent="." groups=["right"]]
-position = Vector2( 1280, 0 )
-
-[node name="LeftBorder" type="CollisionShape2D" parent="RightLimit"]
-position = Vector2( 8, 352 )
-shape = SubResource( 2 )
-
-[node name="TopLimit" type="StaticBody2D" parent="."]
-position = Vector2( 640, -8 )
-
-[node name="TopBorder" type="CollisionShape2D" parent="TopLimit"]
-shape = SubResource( 1 )
-
-[node name="BottomLimit" type="StaticBody2D" parent="."]
-position = Vector2( 0, 720 )
-
-[node name="BottomBorder" type="CollisionShape2D" parent="BottomLimit"]
-position = Vector2( 640, 8 )
-shape = SubResource( 1 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 640, 608 )
-
-[node name="Enemy" type="Node2D" parent="."]
-position = Vector2( 640, -8 )
-script = ExtResource( 3 )
-
-[node name="Arrow_Enemy1" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( -416, 136 )
-
-[node name="Arrow_Enemy2" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( -288, 136 )
-
-[node name="Arrow_Enemy3" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( -160, 136 )
-
-[node name="Arrow_Enemy4" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( -32, 136 )
-
-[node name="Arrow_Enemy5" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 96, 136 )
-
-[node name="Arrow_Enemy6" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 224, 136 )
-
-[node name="Arrow_Enemy7" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 352, 136 )
-
-[node name="Arrow_Enemy8" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( -352, 216 )
-
-[node name="Arrow_Enemy9" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( -224, 216 )
-
-[node name="Arrow_Enemy10" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( -96, 216 )
-
-[node name="Arrow_Enemy11" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 32, 216 )
-
-[node name="Arrow_Enemy12" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 160, 216 )
-
-[node name="Arrow_Enemy13" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 288, 216 )
-
-[node name="Arrow_Enemy14" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 416, 216 )
-
-[node name="Arrow_Enemy15" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( -416, 296 )
-
-[node name="Arrow_Enemy16" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( -288, 296 )
-
-[node name="Arrow_Enemy17" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( -160, 296 )
-
-[node name="Arrow_Enemy18" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( -32, 296 )
-
-[node name="Arrow_Enemy19" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 96, 296 )
-
-[node name="Arrow_Enemy20" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 224, 296 )
-
-[node name="Arrow_Enemy21" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 352, 296 )
-
-[node name="Arrow_Enemy22" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( -352, 376 )
-
-[node name="Arrow_Enemy23" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( -224, 376 )
-
-[node name="Arrow_Enemy24" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( -96, 376 )
-
-[node name="Arrow_Enemy25" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 32, 376 )
-
-[node name="Arrow_Enemy26" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 160, 376 )
-
-[node name="Arrow_Enemy27" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 288, 376 )
-
-[node name="Arrow_Enemy28" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 416, 376 )
 
 [node name="Timer_HUD" type="HBoxContainer" parent="."]
 margin_left = 1152.0
@@ -175,3 +58,120 @@ margin_top = 13.0
 margin_right = 102.0
 margin_bottom = 27.0
 text = "0"
+
+[node name="LeftLimit" type="Area2D" parent="." groups=["left"]]
+
+[node name="RightBorder" type="CollisionShape2D" parent="LeftLimit"]
+position = Vector2( -8, 352 )
+shape = SubResource( 3 )
+
+[node name="RightLimit" type="Area2D" parent="." groups=["right"]]
+position = Vector2( 1280, 0 )
+
+[node name="LeftBorder" type="CollisionShape2D" parent="RightLimit"]
+position = Vector2( 8, 352 )
+shape = SubResource( 2 )
+
+[node name="TopLimit" type="StaticBody2D" parent="."]
+position = Vector2( 640, -8 )
+
+[node name="TopBorder" type="CollisionShape2D" parent="TopLimit"]
+shape = SubResource( 1 )
+
+[node name="BottomLimit" type="StaticBody2D" parent="."]
+position = Vector2( 0, 720 )
+
+[node name="BottomBorder" type="CollisionShape2D" parent="BottomLimit"]
+position = Vector2( 640, 8 )
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 640, 608 )
+
+[node name="Enemies" type="Node2D" parent="."]
+position = Vector2( 640, -8 )
+script = ExtResource( 3 )
+
+[node name="Arrow_Enemy1" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -416, 136 )
+
+[node name="Arrow_Enemy2" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -288, 136 )
+
+[node name="Arrow_Enemy3" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -160, 136 )
+
+[node name="Arrow_Enemy4" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -32, 136 )
+
+[node name="Arrow_Enemy5" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 96, 136 )
+
+[node name="Arrow_Enemy6" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 224, 136 )
+
+[node name="Arrow_Enemy7" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 352, 136 )
+
+[node name="Arrow_Enemy8" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -352, 216 )
+
+[node name="Arrow_Enemy9" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -224, 216 )
+
+[node name="Arrow_Enemy10" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -96, 216 )
+
+[node name="Arrow_Enemy11" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 32, 216 )
+
+[node name="Arrow_Enemy12" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 160, 216 )
+
+[node name="Arrow_Enemy13" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 288, 216 )
+
+[node name="Arrow_Enemy14" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 416, 216 )
+
+[node name="Arrow_Enemy15" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -416, 296 )
+
+[node name="Arrow_Enemy16" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -288, 296 )
+
+[node name="Arrow_Enemy17" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -160, 296 )
+
+[node name="Arrow_Enemy18" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -32, 296 )
+
+[node name="Arrow_Enemy19" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 96, 296 )
+
+[node name="Arrow_Enemy20" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 224, 296 )
+
+[node name="Arrow_Enemy21" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 352, 296 )
+
+[node name="Arrow_Enemy22" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -352, 376 )
+
+[node name="Arrow_Enemy23" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -224, 376 )
+
+[node name="Arrow_Enemy24" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -96, 376 )
+
+[node name="Arrow_Enemy25" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 32, 376 )
+
+[node name="Arrow_Enemy26" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 160, 376 )
+
+[node name="Arrow_Enemy27" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 288, 376 )
+
+[node name="Arrow_Enemy28" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 416, 376 )
