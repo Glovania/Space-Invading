@@ -7,6 +7,7 @@ var bulletSource = preload("res://Bullet/Bullet.tscn")
 func _ready():
 	set_process(true)
 	set_physics_process(true)
+	GlobalVariables.Player = self
 
 
 func _physics_process(delta):
@@ -44,4 +45,5 @@ func playerMovement(delta):
 func reduceHealth():
 	health -= 1
 	if health == 0:
+		GlobalVariables.Player == null
 		get_tree().change_scene("res://Menu/Menu.tscn")

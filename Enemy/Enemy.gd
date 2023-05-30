@@ -5,10 +5,12 @@ var bullet = preload("res://Bullet-Enemy/Bullet-Enemy.tscn")
 
 
 func _ready():
-	$Area2D.connect("area_entered", self, "_colliding")
+	$EnemyArea.connect("area_entered", self, "_colliding")
 
 
 func _process(delta):
+	if GlobalVariables.Player == null:
+		queue_free()
 #	while (true):
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()

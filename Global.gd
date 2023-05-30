@@ -2,8 +2,8 @@ extends Node
 
 var BulletInstanceCount = 0 #Keep track in the bullet numbers
 var enemyBulletInstanceCount = 0 #Keep track in the enemy bullet numbers
- 
 var AutoFiring = false
+var Player 
 
 var Filesave = "user://save.dat"
 
