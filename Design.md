@@ -41,10 +41,14 @@ title User Journey
         CLick 'Return to menu' button: 4: User
 
     section Winner Scene
-        Click 'Return to menu' button: 7: User
+        Click 'Return to menu' button: 4: User
 
     section Loser Scene
         Click 'Return to menu' button: 4: User
+
+    section Pause Menu
+        Click 'Return to menu' button: 4: User
+        Click 'Resume' button: 8: User
 ```
 
 
@@ -67,10 +71,12 @@ gantt
     Project Overview: 05-04-2023, 1d
     Project Plan: 05-04-2023, 1d
 
-    section Implementation
+    section Better_UI_Improve
     BetterMainMenu: 25-04-2023, 1d
     BetterOption: 01-05-2023, 1d
     BetterInbetweenSceneChange: 01-06-2023, 2d
+
+    section Implementation
     Multiple Enemies: 17-05-2023, 7d
     PlayerHealth: 31-05-2023, 1d
     EnemyHealth: 31-05-2023, 1d
