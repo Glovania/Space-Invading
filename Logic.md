@@ -1,3 +1,4 @@
+# This is just an example of a flowchart logic. Working on the actual logics later on :D
 ```mermaid
 flowchart TD
      terminalStart([Start])
@@ -20,4 +21,3 @@ flowchart TD
     deactivatePiezo --> terminalEnd
     activatePiezo --> terminalEnd
 ```
-# This is just an example of a flowchart logic. Working on the actual logics later on :D
