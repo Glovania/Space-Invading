@@ -31,8 +31,3 @@ func _process(delta):
 		$Score_HUD/ScoreCounter.text = str(GlobalVariables.ScoringInformation["currentScore"])
 		if get_tree().get_nodes_in_group("enemy").size() == 0:
 			get_tree().change_scene("res://NewLevels/MoveOnToTheNextLevel.tscn")
-
-
-func StartGameButton_pressed():
-	$StartButton.hide()
-	emit_signal("start_game")
