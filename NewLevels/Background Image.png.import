@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Background Image.png-e7acb0660350d5d4a4f3b39bd0af9ca0.stex"
+path="res://.import/Background Image.png-047458254fe9d8bc8b2b633354014c4e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MainGame/Background Image.png"
-dest_files=[ "res://.import/Background Image.png-e7acb0660350d5d4a4f3b39bd0af9ca0.stex" ]
+source_file="res://NewLevels/Background Image.png"
+dest_files=[ "res://.import/Background Image.png-047458254fe9d8bc8b2b633354014c4e.stex" ]
 
 [params]
 

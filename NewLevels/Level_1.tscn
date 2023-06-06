@@ -6,7 +6,7 @@
 [ext_resource path="res://MainGame/MainGame.gd" type="Script" id=4]
 [ext_resource path="res://Enemy/Enemies.gd" type="Script" id=5]
 [ext_resource path="res://ExampleCode.gd" type="Script" id=6]
-[ext_resource path="res://MainGame/Background Image.png" type="Texture" id=7]
+[ext_resource path="res://NewLevels/Background Image.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.7647, 416 )
@@ -30,12 +30,12 @@ margin_left = -3.0
 margin_right = 1277.0
 margin_bottom = 720.0
 
-[node name="Background" type="TextureRect" parent="."]
-margin_left = 1554.0
-margin_top = -1600.0
-margin_right = 5394.0
-margin_bottom = 200.0
-rect_rotation = 89.9999
+[node name="GameBg" type="TextureRect" parent="."]
+margin_left = -522.785
+margin_top = 2703.67
+margin_right = 3317.22
+margin_bottom = 4503.67
+rect_rotation = 270.108
 texture = ExtResource( 7 )
 
 [node name="Score_HUD" type="HBoxContainer" parent="."]
