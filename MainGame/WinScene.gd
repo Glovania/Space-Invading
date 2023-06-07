@@ -1,7 +1,8 @@
 extends Node2D
 
+
 func _ready():
-	#Sorts the array
+	# Sorts the array
 	GlobalVariables.ScoringInformation["highScore"].sort()
 	
 	# Searches the array for the value, or the position in the array where it will "fit".
@@ -17,7 +18,8 @@ func _ready():
 	# Debugging.
 	print(GlobalVariables.ScoringInformation["highScore"])
 	saveData()
-	
+
+
 func saveData():
 	var file = File.new()
 	var error = file.open(GlobalVariables.Filesave, file.WRITE)
@@ -29,4 +31,5 @@ func saveData():
 		print("!!Data Not Saved!!")
 
 func _on_Button_pressed():
+	GlobalVariables.Player == null
 	get_tree().change_scene("res://Menu/Menu.tscn")

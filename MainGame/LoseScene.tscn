@@ -28,4 +28,5 @@ margin_right = 100.0
 margin_bottom = 13.9531
 rect_scale = Vector2( 0.648734, 1.42505 )
 text = "Return to menu"
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]

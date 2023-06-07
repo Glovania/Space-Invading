@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Audio/Background Music.wav" type="AudioStream" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://MainGame/MainGame.gd" type="Script" id=4]
 [ext_resource path="res://Enemy/Enemies.gd" type="Script" id=5]
-[ext_resource path="res://ExampleCode.gd" type="Script" id=6]
 [ext_resource path="res://NewLevels/Background Image.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -42,7 +41,6 @@ texture = ExtResource( 7 )
 margin_left = -3.0
 margin_right = 125.0
 margin_bottom = 40.0
-script = ExtResource( 6 )
 
 [node name="Score" type="Label" parent="Score_HUD"]
 margin_top = 13.0
@@ -65,7 +63,6 @@ valign = 1
 margin_left = 1149.0
 margin_right = 1277.0
 margin_bottom = 40.0
-script = ExtResource( 6 )
 
 [node name="Timer" type="Label" parent="Timer_HUD"]
 margin_top = 13.0

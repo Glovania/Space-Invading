@@ -6,7 +6,7 @@ var bullet = preload("res://Bullet-Enemy/Bullet-Enemy.tscn")
 
 func _ready():
 	$EnemyArea.connect("area_entered", self, "_colliding")
-
+	set_process(true)
 
 func _process(delta):
 	if GlobalVariables.Player == null:

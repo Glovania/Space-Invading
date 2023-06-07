@@ -21,7 +21,6 @@ func loadData():
 
 
 func _on_Start_Game_Button_pressed():
-	GlobalVariables.enemyBulletInstanceCount = 0
 #	$StartButton.hide()
 #	emit_signal("start_game")
 	get_tree().change_scene("res://NewLevels/Level_1.tscn")
