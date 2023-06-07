@@ -65,8 +65,8 @@ gantt
     School's Holidays: 09-04-2023, 14d
     ANZAC Day: 25-04-2023, 1d
     Reconciliation Day: 29-05-2023, 1d
-    King's Birthday: 07-06-2023, 1d
-    Queen's Birthday: 14-06-2023, 1d
+    King's Birthday: 12-06-2023, 1d
+    Queen's Birthday: 19-06-2023, 1d
 
     section Design
     Project Overview: 05-04-2023, 1d
