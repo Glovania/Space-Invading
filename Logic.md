@@ -4,12 +4,13 @@
 ### Player Movement
 ```mermaid
 flowchart TD
+%% Comment
     Start([KineticBody2D])
-    ReturnValue(Return the value)
     Executed(Executed)
+    PhysicPlayerProcess(func _physics_process)
 
     GetDeltaValue(Get Delta Values)
-    GetMovementSpeed(Get Movement Speed)
+    GetPlayerMovementSpeedValue(Get Movement Speed)
     CreateBoundaries{Create Boundaries}
     ActivatePlayerMovement(move_and_collide)
 
@@ -19,34 +20,55 @@ flowchart TD
     GetDownUI(ui_down)
 
 
-    Start ==> GetMovementSpeed ==> GetDeltaValue
+    Start ==> PhysicPlayerProcess
+    PhysicPlayerProcess ==> GetPlayerMovementSpeedValue
+    PhysicPlayerProcess ==> GetDeltaValue
 
-    GetMovementSpeed --> GetLeftUI
+    GetPlayerMovementSpeedValue --> GetLeftUI
     GetDeltaValue --> GetLeftUI --- CreateBoundaries --> |x>30| ActivatePlayerMovement
     CreateBoundaries --> |x<30| Executed
 
 
-    GetMovementSpeed --> GetRightUI
+    GetPlayerMovementSpeedValue --> GetRightUI
     GetDeltaValue --> GetRightUI --- CreateBoundaries --> |x<1250| ActivatePlayerMovement
     CreateBoundaries --> |x>1250| Executed
 
 
-    GetMovementSpeed --> GetUpUI
+    GetPlayerMovementSpeedValue --> GetUpUI
     GetDeltaValue --> GetUpUI --- CreateBoundaries --> |y>600| ActivatePlayerMovement
     CreateBoundaries --> |y<600| Executed
 
 
-    GetMovementSpeed --> GetDownUI
+    GetPlayerMovementSpeedValue --> GetDownUI
     GetDeltaValue --> GetDownUI --- CreateBoundaries --> |y<1690| ActivatePlayerMovement
     CreateBoundaries --> |y>1690| Executed
 
-    Executed --- ReturnValue
-    ActivatePlayerMovement --- ReturnValue
-
-    ReturnValue -.-> Start
+    Executed -- ReturnValue -.-> Start
+    ActivatePlayerMovement -- Return the value -.-> Start
 ```
 
 ### Enemy Movement
+```mermaid
+flowchart TD
+%% Comment
+    Start([KineticBody2D])
+    PhysicEnemyProcess(func _physics_process)
+
+    GetEnemyMovementSpeedValue(Get Movement Speed's Value)
+    GetDeltaValue(Get Delta Values)
+    StartColliding(Collide)
+    ShiftedDown(Shift down)
+
+
+    Start ==> PhysicEnemyProcess
+    PhysicEnemyProcess === GetEnemyMovementSpeedValue --> StartColliding
+    PhysicEnemyProcess === GetDeltaValue --> StartColliding
+    
+    StartColliding --> |Hit Left Boundary| ShiftedDown
+    StartColliding --> |Hit Right Boundary| ShiftedDown
+
+    ShiftedDown -- Return the signal -.-> Start
+```
 
 ## Bullets system
 ### Enemy Bullets
