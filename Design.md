@@ -1,8 +1,6 @@
 # Project Overview
 
-- This game is a Upgraded version of "Space Invaders". The game's theme is The Outsiders vs The Belongings.
-
-
+> This game is a Upgraded version of "Space Invaders". The game's theme is The Outsiders vs The Belongings.
 - The Outsiders are alliens that invading our planet. The Belongings are human that trying their best to protect their planet. 
 
 
