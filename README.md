@@ -1,4 +1,4 @@
-# SpaceInvaders2022
+# SpaceInvaders2023
 
 ## Purpose
 This partially configured Godot project will be used to demonstrate the implementation of the Software Development Course.

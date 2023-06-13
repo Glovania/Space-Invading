@@ -58,6 +58,7 @@ flowchart TD
     GetDeltaValue(Get Delta Values)
     StartColliding(Collide)
     ShiftedDown(Shift down)
+    RevertEnemyMovementSpeedValue(Revert Movement Speed's Value)
 
 
     Start ==> PhysicEnemyProcess
@@ -65,17 +66,58 @@ flowchart TD
     PhysicEnemyProcess === GetDeltaValue --> StartColliding
     
     StartColliding --> |Hit Left Boundary| ShiftedDown
-    StartColliding --> |Hit Right Boundary| ShiftedDown
+    StartColliding --> |Hit Right Boundary| ShiftedDown --> RevertEnemyMovementSpeedValue 
 
+    RevertEnemyMovementSpeedValue -- Return the value -.-> Start
     ShiftedDown -- Return the signal -.-> Start
 ```
 
 ## Bullets system
+
 ### Enemy Bullets
+```mermaid
+flowchart TD
+%% Comment
+    Start([KineticBody2D])
+    PhysicEnemyBulletProcess(func _physics_process)
+    Executed(Executed)
 
+    GetEnemyBulletSpeedValue(Get Bullet Speed's Value)
+    GetDeltaValue(Get Delta Values)
+    ActivateEnemyBulletMovement(move_and_collide)
+
+
+    Start ==> PhysicEnemyBulletProcess
+    PhysicEnemyBulletProcess ==> GetEnemyBulletSpeedValue --> ActivateEnemyBulletMovement
+    PhysicEnemyBulletProcess ==> GetDeltaValue --> ActivateEnemyBulletMovement
+
+    ActivateEnemyBulletMovement ---> |Hit Bottom Boundary| Executed
+    ActivateEnemyBulletMovement ---> |Hit Player| Executed
+
+    Executed -- Return the signal -.-> Start 
+```
 ### Player Bullets
+```mermaid
+flowchart TD
+%% Comment
+    Start([KineticBody2D])
+    PhysicPlayerBulletProcess(func _physics_process)
+    Executed(Executed)
 
-### Automatic Firing
+    GetPlayerBulletSpeedValue(Get Bullet Speed's Value)
+    GetDeltaValue(Get Delta Values)
+    ActivatePlayerBulletMovement(move_and_collide)
+
+
+    Start ==> PhysicPlayerBulletProcess
+    PhysicPlayerBulletProcess ==> GetPlayerBulletSpeedValue --> ActivatePlayerBulletMovement
+    PhysicPlayerBulletProcess ==> GetDeltaValue --> ActivatePlayerBulletMovement
+
+    ActivatePlayerBulletMovement ---> |Hit Bottom Boundary| Executed 
+    ActivatePlayerBulletMovement ---> |Hit Enemies| Executed
+
+    Executed -- Return the signal -.-> Start 
+```
 
 ## Health system
 
@@ -83,16 +125,13 @@ flowchart TD
 
 ### Enemy's Health
 
-## UIs
-
-### Levels system
+## Scene changes system
 
 ### Win Scene
 
 ### Lose Scene
-### Highsccore system
 
-### Scene changes system
+### Mid-Scene
 
 ### Pause Menu
 
@@ -101,3 +140,12 @@ flowchart TD
 ### Kill Player
 
 ### Kill Enemy
+
+## Other UIs
+
+### Levels system
+
+### Highsccore system
+
+### Automatic Firing
+
