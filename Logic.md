@@ -6,7 +6,7 @@
 flowchart TD
 %% Comment
     Start([playerMovement])
-    End(End)
+    End([End])
 
     xPosition_1{position.x > 30}
     xPosition_2{position.x < 1250}
@@ -33,9 +33,9 @@ flowchart TD
     xPosition_1 -->|Yes| movePlayer_1
 
 
-        movePlayer_1 --> GetRightUI
-        GetLeftUI --> |No| GetRightUI
-        xPosition_1 --> |No| GetRightUI
+        movePlayer_1 ==> GetRightUI
+        GetLeftUI ==> |No| GetRightUI
+        xPosition_1 ==> |No| GetRightUI
 
 
         GetRightUI --> |Yes| xPosition_2
@@ -43,9 +43,9 @@ flowchart TD
 
 
 
-            movePlayer_2 --> GetDownUI
-            GetRightUI --> |No| GetDownUI
-            xPosition_2 --> |No| GetDownUI
+            movePlayer_2 ==> GetDownUI
+            GetRightUI ==> |No| GetDownUI
+            xPosition_2 ==> |No| GetDownUI
 
 
             GetDownUI --> |Yes| yPosition_1
@@ -53,9 +53,9 @@ flowchart TD
 
 
 
-                movePlayer_3 --> GetUpUI
-                GetDownUI-->|No| GetUpUI
-                yPosition_1 --> |No| GetUpUI
+                movePlayer_3 ==> GetUpUI
+                GetDownUI ==>|No| GetUpUI
+                yPosition_1 ==> |No| GetUpUI
 
 
                 GetUpUI --> |Yes| yPosition_2
@@ -63,9 +63,9 @@ flowchart TD
 
 
 
-                    movePlayer_4 --> End
-                    GetUpUI -->|No| End
-                    yPosition_2 --> |No| End
+                    movePlayer_4 ==> End
+                    GetUpUI ==>|No| End
+                    yPosition_2 ==> |No| End
  ```
 
 ### Enemy Movement
@@ -73,87 +73,122 @@ flowchart TD
 flowchart TD
 %% Comment
     Start([enemyMovement])
-    End(End)
-    xGlobalPosition[global_position.x]
+    End([End])
+    xGlobalPosition{global_position.x}
+    EnemyMovementActivate(move and collide the enemy)
 
 
-    Start ==> xGlobalPosition --> End
+    Start ==> xGlobalPosition 
+
+    xGlobalPosition --> |True| EnemyMovementActivate
+    xGlobalPosition --> |False| End
 ```
 
 ## Bullets system
 
+### Automatic Firing
+```mermaid
+flowchart TD
+%% Comment
+    Start([autoFiring])
+    End([End])
+
+    GetGlobalVariable{Get GlobalVariables}
+    KeyPressedAction{is_action_pressed}
+    CollidedBullets(Bullets collided)
+
+
+    Start ==> GetGlobalVariable
+    CollidedBullets ==> End
+
+    GetGlobalVariable --> |Yes| KeyPressedAction
+    GetGlobalVariable --> |No| End
+
+    KeyPressedAction --> |Yes| CollidedBullets
+    KeyPressedAction --> |No| End
+```
 ### Enemy Bullets
 ```mermaid
 flowchart TD
 %% Comment
-    Start([KineticBody2D])
-    PhysicEnemyBulletProcess(func _physics_process)
-    Executed(Executed)
+    Start([enemyBullet])
+    End([End])
 
-    GetEnemyBulletSpeedValue(Get Bullet Speed's Value)
-    GetDeltaValue(Get Delta Values)
-    ActivateEnemyBulletMovement(move_and_collide)
+    GetGlobalVariable{Get GlobalVariables}
+    EnemyBulletsActivate{move_and_collide}
+    CollidedBullets(Bullets collided)
 
 
-    Start ==> PhysicEnemyBulletProcess
-    PhysicEnemyBulletProcess ==> GetEnemyBulletSpeedValue --> ActivateEnemyBulletMovement
-    PhysicEnemyBulletProcess ==> GetDeltaValue --> ActivateEnemyBulletMovement
+    Start ==> GetGlobalVariable
 
-    ActivateEnemyBulletMovement ---> |Hit Bottom Boundary| Executed
-    ActivateEnemyBulletMovement ---> |Hit Player| Executed
+    GetGlobalVariable --> |Yes| EnemyBulletsActivate
+    GetGlobalVariable --> |No| End
 
-    Executed -- Return the signal -.-> Start 
+    EnemyBulletsActivate --> |Yes| CollidedBullets
+    EnemyBulletsActivate --> |No| End
 ```
 ### Player Bullets
 ```mermaid
 flowchart TD
 %% Comment
-    Start([KineticBody2D])
-    PhysicPlayerBulletProcess(func _physics_process)
-    Executed(Executed)
+    Start([playerBullets])
+    End([End])
 
-    GetPlayerBulletSpeedValue(Get Bullet Speed's Value)
-    GetDeltaValue(Get Delta Values)
-    ActivatePlayerBulletMovement(move_and_collide)
+    GetGlobalVariable{Get GlobalVariables}
+    PlayerBulletsActivate{move_and_collide}
+    CollidedBullets(Bullets collided)
 
 
-    Start ==> PhysicPlayerBulletProcess
-    PhysicPlayerBulletProcess ==> GetPlayerBulletSpeedValue --> ActivatePlayerBulletMovement
-    PhysicPlayerBulletProcess ==> GetDeltaValue --> ActivatePlayerBulletMovement
+    Start ==> GetGlobalVariable
 
-    ActivatePlayerBulletMovement ---> |Hit Bottom Boundary| Executed 
-    ActivatePlayerBulletMovement ---> |Hit Enemies| Executed
+    GetGlobalVariable --> |Yes| PlayerBulletsActivate
+    GetGlobalVariable --> |No| End
 
-    Executed -- Return the signal -.-> Start 
+    PlayerBulletsActivate --> |Yes| CollidedBullets
+    PlayerBulletsActivate --> |No| End
 ```
 
 ## Health system
 
 ### Player's Heath
+```mermaid
+flowchart TD
+%% Comment
+    Start([reduceHeath])
+    End([End])
 
+    GetVariable(Get Player's health variable)
+    DecreaseHealthValue{health -= 1}
+    ZeroHealthValue{if health = 0}
+    KillThePlayer{Kill the Player}
+
+    Start ==> GetVariable ==> DecreaseHealthValue
+    KillThePlayer ==> End
+
+    DecreaseHealthValue --> |True| ZeroHealthValue
+    DecreaseHealthValue --> |False| End
+
+    ZeroHealthValue --> |True| KillThePlayer
+    ZeroHealthValue --> |False| End
+```
 ### Enemy's Health
+```mermaid
+flowchart TD
+%% Comment
+    Start([reduceHeath])
+    End([End])
 
-## Scene changes system
+    GetVariable(Get Enemy's health variable)
+    DecreaseHealthValue{health -= 1}
+    ZeroHealthValue{if health = 0}
+    KillTheEnemy{Kill the Enemy}
 
-### Win Scene
+    Start ==> GetVariable ==> DecreaseHealthValue
+    KillTheEnemy ==> End
 
-### Lose Scene
+    DecreaseHealthValue --> |True| ZeroHealthValue
+    DecreaseHealthValue --> |False| End
 
-### Mid-Scene
-
-### Pause Menu
-
-## Killed/Executed system
-
-### Kill Player
-
-### Kill Enemy
-
-## Other UIs
-
-### Levels system
-
-### Highsccore system
-
-### Automatic Firing
-
+    ZeroHealthValue --> |True| KillTheEnemy
+    ZeroHealthValue --> |False| End
+```

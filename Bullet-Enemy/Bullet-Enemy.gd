@@ -7,8 +7,13 @@ var speed = 500
 func _ready():
 	GlobalVariables.enemyBulletInstanceCount += 1
 	set_physics_process(true)
-	
+
+
 func _physics_process(delta):
+	enemyBullets(delta)
+
+
+func enemyBullets(delta):
 	if GlobalVariables.Player == null:
 		queue_free()
 	var collidedObject = move_and_collide(Vector2(0, +speed * delta * 0.4))
