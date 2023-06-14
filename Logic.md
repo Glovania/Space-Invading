@@ -5,47 +5,68 @@
 ```mermaid
 flowchart TD
 %% Comment
-    Start([KineticBody2D])
-    Executed(Executed)
-    PhysicPlayerProcess(func _physics_process)
+    Start([playerMovement])
+    End(End)
 
-    GetDeltaValue(Get Delta Values)
-    GetPlayerMovementSpeedValue(Get Movement Speed)
-    CreateBoundaries{Create Boundaries}
-    ActivatePlayerMovement(move_and_collide)
+    xPosition_1{position.x > 30}
+    xPosition_2{position.x < 1250}
 
-    GetLeftUI(ui_left)
-    GetRightUI(ui_right)
-    GetUpUI(ui_up)
-    GetDownUI(ui_down)
+    yPosition_1{position.y < 1690}
+    yPosition_2{position.y > 600}
 
+    movePlayer_1{move_and_collide}
+    movePlayer_2{move_and_collide}
+    movePlayer_3{move_and_collide}
+    movePlayer_4{move_and_collide}
 
-    Start ==> PhysicPlayerProcess
-    PhysicPlayerProcess ==> GetPlayerMovementSpeedValue
-    PhysicPlayerProcess ==> GetDeltaValue
-
-    GetPlayerMovementSpeedValue --> GetLeftUI
-    GetDeltaValue --> GetLeftUI --- CreateBoundaries --> |x>30| ActivatePlayerMovement
-    CreateBoundaries --> |x<30| Executed
+    GetLeftUI{ui_left}
+    GetRightUI{ui_right}
+    GetUpUI{ui_up}
+    GetDownUI{ui_down}
 
 
-    GetPlayerMovementSpeedValue --> GetRightUI
-    GetDeltaValue --> GetRightUI --- CreateBoundaries --> |x<1250| ActivatePlayerMovement
-    CreateBoundaries --> |x>1250| Executed
+
+    Start ==> GetLeftUI
 
 
-    GetPlayerMovementSpeedValue --> GetUpUI
-    GetDeltaValue --> GetUpUI --- CreateBoundaries --> |y>600| ActivatePlayerMovement
-    CreateBoundaries --> |y<600| Executed
+    GetLeftUI -->|Yes| xPosition_1
+    xPosition_1 -->|Yes| movePlayer_1
 
 
-    GetPlayerMovementSpeedValue --> GetDownUI
-    GetDeltaValue --> GetDownUI --- CreateBoundaries --> |y<1690| ActivatePlayerMovement
-    CreateBoundaries --> |y>1690| Executed
+        movePlayer_1 --> GetRightUI
+        GetLeftUI --> |No| GetRightUI
+        xPosition_1 --> |No| GetRightUI
 
-    Executed -- ReturnValue -.-> Start
-    ActivatePlayerMovement -- Return the value -.-> Start
-```
+
+        GetRightUI --> |Yes| xPosition_2
+        xPosition_2 --> |Yes| movePlayer_2
+
+
+
+            movePlayer_2 --> GetDownUI
+            GetRightUI --> |No| GetDownUI
+            xPosition_2 --> |No| GetDownUI
+
+
+            GetDownUI --> |Yes| yPosition_1
+            yPosition_1 --> |Yes| movePlayer_3
+
+
+
+                movePlayer_3 --> GetUpUI
+                GetDownUI-->|No| GetUpUI
+                yPosition_1 --> |No| GetUpUI
+
+
+                GetUpUI --> |Yes| yPosition_2
+                yPosition_2 --> |Yes| movePlayer_4
+
+
+
+                    movePlayer_4 --> End
+                    GetUpUI -->|No| End
+                    yPosition_2 --> |No| End
+ ```
 
 ### Enemy Movement
 ```mermaid
