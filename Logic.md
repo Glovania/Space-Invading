@@ -72,25 +72,12 @@ flowchart TD
 ```mermaid
 flowchart TD
 %% Comment
-    Start([KineticBody2D])
-    PhysicEnemyProcess(func _physics_process)
-
-    GetEnemyMovementSpeedValue(Get Movement Speed's Value)
-    GetDeltaValue(Get Delta Values)
-    StartColliding(Collide)
-    ShiftedDown(Shift down)
-    RevertEnemyMovementSpeedValue(Revert Movement Speed's Value)
+    Start([enemyMovement])
+    End(End)
+    xGlobalPosition[global_position.x]
 
 
-    Start ==> PhysicEnemyProcess
-    PhysicEnemyProcess === GetEnemyMovementSpeedValue --> StartColliding
-    PhysicEnemyProcess === GetDeltaValue --> StartColliding
-    
-    StartColliding --> |Hit Left Boundary| ShiftedDown
-    StartColliding --> |Hit Right Boundary| ShiftedDown --> RevertEnemyMovementSpeedValue 
-
-    RevertEnemyMovementSpeedValue -- Return the value -.-> Start
-    ShiftedDown -- Return the signal -.-> Start
+    Start ==> xGlobalPosition --> End
 ```
 
 ## Bullets system
